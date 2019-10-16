@@ -1,0 +1,17 @@
+
+.jumbotron {
+    background-image: url("https://cdn.pixabay.com/photo/2016/03/09/09/14/books-1245690_960_720.jpg");
+    color: black;
+    font-weight: bold;
+    text-align: center;
+}
+
+p {
+    margin: 2em;
+    padding-bottom: 3em;
+    text-align: justify;
+}
+
+.card-text{
+    text-decoration: none
+}
