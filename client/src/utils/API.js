@@ -7,20 +7,14 @@ export default {
     },
 
     save: function(bookData) {
-        console.log("bookData below")
-        console.log(bookData.title)
         return axios.post("/api/books", bookData);
-
     },
 
     getBooks: function() {
-        console.log("getBooks from API.js");
         return axios.get("/api/books")
     }, 
 
     deleteBook: function(id) {
-        console.log(id.id)
-    
         return axios.delete("/api/books/" + id.id);
     } 
 

@@ -10,9 +10,7 @@ class SavedBooks extends React.Component {
         books: [],
         title: "",
         author: "",
-        synopsis: "",
-
-
+        synopsis: ""
     };
 
     componentDidMount() {
@@ -35,11 +33,11 @@ class SavedBooks extends React.Component {
     render() {
         return (
             <div className="row">
-                <div className="col-md-9 mx-auto">
+                <div className="col-md-12">
                     <h1>Books in your library </h1>
                     {this.state.books.map(book => (
                         <div className="row" key={book._id}>
-                            <div className="col-md-12 mx-auto">
+                            <div className="col-md-12">
                                 <br />
                                 <SavedContainer
                                     title={book.title}
@@ -49,7 +47,7 @@ class SavedBooks extends React.Component {
                                     link={book.link}
                                     img={book.img}
                                     deleteBook={this.deleteBook}
-                                    />
+                                />
                             </div>
                         </div>
                     ))}

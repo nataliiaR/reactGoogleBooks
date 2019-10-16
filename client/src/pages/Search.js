@@ -11,12 +11,7 @@ class Search extends React.Component {
         author: "",
         synopsis: "",
         error: ""
-
     };
-
-    componentDidMount() {
-
-    }
 
     searchBooks = query => {
         API.search(query)
@@ -30,10 +25,6 @@ class Search extends React.Component {
     }
 
     saveBook = data => {
-        // This data is being passed in from BooksContainer.js props (all props) when the save button is clicked.
-        // console.log(data)
-        // The data then gets passed into API save function where it comes in as bookData and gets passed
-        // into a mongoose schema via axios.
         API.save({
             title: data.title,
             author: data.author,
@@ -46,8 +37,6 @@ class Search extends React.Component {
                 if (res.data.status === "error") {
                     throw new Error(res.data.message);
                 }
-                console.log("what now?")
-                console.log(res.data.config)
             })
             .catch(err => console.log(err.response));
     }
@@ -68,7 +57,7 @@ class Search extends React.Component {
         return (
             <div>
                 <div className="row">
-                    <div className="col-md-9 mx-auto">
+                    <div className="col-md-12">
                     <h1>Search books by keyword</h1>
                         <form>
                             <div className="form-group">
@@ -80,7 +69,7 @@ class Search extends React.Component {
                 </div>
                 {this.state.books.map(books => (
                     <div className="row" key={books.id}>
-                        <div className="col-md-6 mx-auto">
+                        <div className="col-md-6">
                             <br />
                             <BooksContainer
                                 title={books.volumeInfo.title}
@@ -91,7 +80,6 @@ class Search extends React.Component {
                                 link={books.volumeInfo.previewLink}
                                 img={books.volumeInfo.imageLinks.thumbnail}
                                 saveBook={this.saveBook}
-                                
                             />
                         </div>
                     </div>
