@@ -7,9 +7,8 @@ function BooksContainer(props) {
             <div className="card-body">
                 <div className="row">
                     <div className="col-md-9">
-                        <h1 className="card-title">{props.title}</h1>
-                        <h3 className="card-subtitle mb-2 text-muted">by {props.author}</h3>
-                    </div>
+                        <h1 className="card-title">{props.title} by {props.author}</h1>
+                        </div>
                     <div className="col-md-3">
                         <img src={props.img} alt={props.title} />
                     </div>

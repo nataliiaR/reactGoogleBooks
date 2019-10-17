@@ -9,8 +9,8 @@ class SavedBooks extends React.Component {
     state = {
         books: [],
         title: "",
-        author: "",
-        synopsis: ""
+        authors: "",
+        description: ""
     };
 
     componentDidMount() {
@@ -19,7 +19,7 @@ class SavedBooks extends React.Component {
 
     loadBooks = () => {
         API.getBooks()
-            .then(res => this.setState({ books: res.data, title: "", author: "", synopsis: "" }))
+            .then(res => this.setState({ books: res.data, title: "", authors: "", description: "" }))
             .catch(err => console.log(err));
     };
 
@@ -41,11 +41,11 @@ class SavedBooks extends React.Component {
                                 <br />
                                 <SavedContainer
                                     title={book.title}
-                                    author={book.author}
-                                    synopsis={book.synopsis}
+                                    authors={book.authors}
+                                    description={book.description}
                                     id={book._id}
                                     link={book.link}
-                                    img={book.img}
+                                    image={book.image}
                                     deleteBook={this.deleteBook}
                                 />
                             </div>
