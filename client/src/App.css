@@ -15,3 +15,7 @@ p {
 .card-text{
     text-decoration: none
 }
+
+.card{
+    margin: 1em
+}
