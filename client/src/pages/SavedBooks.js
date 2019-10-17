@@ -38,7 +38,6 @@ class SavedBooks extends React.Component {
                     {this.state.books.map(book => (
                         <div className="row" key={book._id}>
                             <div className="col-md-12">
-                                <br />
                                 <SavedContainer
                                     title={book.title}
                                     authors={book.authors}

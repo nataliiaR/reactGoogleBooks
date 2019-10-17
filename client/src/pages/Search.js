@@ -8,8 +8,8 @@ class Search extends React.Component {
         search: "",
         books: [],
         title: "",
-        author: "",
-        synopsis: "",
+        authors: "",
+        description: "",
         error: ""
     };
 
@@ -27,10 +27,10 @@ class Search extends React.Component {
     saveBook = data => {
         API.save({
             title: data.title,
-            author: data.author,
-            synopsis: data.synopsis,
+            authors: data.authors,
+            description: data.description,
             link: data.link,
-            img: data.img
+            image: data.image
         })
             .then(res => {
                 console.log(res.data.config)
@@ -73,12 +73,12 @@ class Search extends React.Component {
                             <br />
                             <BooksContainer
                                 title={books.volumeInfo.title}
-                                author={books.volumeInfo.authors}
+                                authors={books.volumeInfo.authors}
                                 key={books.id}
                                 id={books.id}
-                                synopsis={books.volumeInfo.description}
+                                description={books.volumeInfo.description}
                                 link={books.volumeInfo.previewLink}
-                                img={books.volumeInfo.imageLinks.thumbnail}
+                                image={books.volumeInfo.imageLinks.thumbnail}
                                 saveBook={this.saveBook}
                             />
                         </div>
