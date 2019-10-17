@@ -69,8 +69,7 @@ class Search extends React.Component {
                 </div>
                 {this.state.books.map(books => (
                     <div className="row" key={books.id}>
-                        <div className="col-md-6">
-                            <br />
+                        <div className="col-md-12">
                             <BooksContainer
                                 title={books.volumeInfo.title}
                                 authors={books.volumeInfo.authors}
